@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projet — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header header--small">
+    <div class="header__container">
+      <a class="logo" href="index.html">El Hadji Boubacar Mbaye</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-detail container">
+      <h1 id="proj-title">Titre du projet</h1>
+      <p id="proj-desc">Description détaillée du projet...</p>
+
+      <img id="proj-img" src="assets/project1.jpg" alt="Aperçu du projet" loading="lazy">
+
+      <h3>Stack</h3>
+      <p id="proj-stack">HTML • CSS • JavaScript</p>
+
+      <a class="btn" href="index.html">Retour</a>
+    </section>
+  </main>
+
+  <script>
+    // Simple loader pour lire query params et charger le projet simulé
+    (function(){
+      const params = new URLSearchParams(location.search);
+      const id = params.get('proj') || '1';
+      // Ici tu peux ajouter switch(id) pour charger dynamiquement
+      document.getElementById('proj-title').textContent = 'Projet ' + id;
+      document.getElementById('proj-desc').textContent = 'Description détaillée du projet ' + id + ' — exemple.';
+      document.getElementById('proj-stack').textContent = 'HTML, CSS, JS';
+    })();
+  </script>
+</body>
+</html>
